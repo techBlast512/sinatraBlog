@@ -1,5 +1,6 @@
+<hr>
 <h1 class="pageTitle text-center">Blog Posts</h1>
-<h2><a href="/blogs/new">Write New Post</a></h2>
+<hr>
 <% if @blogs.any? %>
   <ul id="blogs">
     <% @blogs.each do |blog| %>
@@ -10,3 +11,5 @@
 <% else %>
   <p>No blogs have been created yet!</p>  
   <% end %>
+<hr>
+<a href="/blogs/new">login portal</a>
