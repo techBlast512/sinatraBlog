@@ -1,0 +1,159 @@
+/*! color variables */
+/*! font variables */
+/*! defaults */
+/*! global styles*/
+/* line 6, ../sass/style.scss */
+html, body {
+  background-color: #155d7a;
+  color: #00BFFF;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* line 13, ../sass/style.scss */
+.gimmeSpace {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* line 18, ../sass/style.scss */
+li, p {
+  font-size: 135%;
+  font-family: "Lekton", sans-serif;
+}
+
+/* line 23, ../sass/style.scss */
+h1, h2 {
+  font-family: "Lekton", sans-serif;
+}
+
+/* line 27, ../sass/style.scss */
+a:link {
+  text-decoration: none;
+}
+
+/* line 31, ../sass/style.scss */
+a {
+  color: white;
+  font-family: "Lekton", sans-serif;
+  transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -webkit-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+}
+
+/* line 40, ../sass/style.scss */
+a:hover {
+  color: #ff0000;
+  transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -webkit-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+}
+
+/* line 48, ../sass/style.scss */
+.pageTitle {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+}
+
+/*! button styles*/
+/* line 55, ../sass/style.scss */
+input, button {
+  font-family: "Lekton", sans-serif;
+  margin: 15px;
+}
+
+/* line 60, ../sass/style.scss */
+input, textarea {
+  border-radius: 5px;
+  padding: 8px;
+  color: purple;
+}
+
+/* line 66, ../sass/style.scss */
+label {
+  display: block;
+}
+
+/*! navbar styles */
+/* line 71, ../sass/style.scss */
+.container-fluid {
+  background-color: #155d7a;
+}
+
+/* line 75, ../sass/style.scss */
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand {
+  color: #ffffff;
+  font-family: "Lekton", sans-serif;
+  transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -webkit-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+}
+
+/* line 85, ../sass/style.scss */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-brand:hover {
+  color: #ff4646;
+  font-family: "Lekton", sans-serif;
+  background-color: #00BFFF;
+}
+
+/* line 92, ../sass/style.scss */
+.navbar-default .navbar-toggle:hover {
+  color: #ff4646;
+  background-color: #00BFFF;
+  transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -webkit-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+}
+
+/* line 101, ../sass/style.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+/* line 105, ../sass/style.scss */
+.navbar-default .navbar-toggle:hover .icon-bar {
+  background-color: #ff4646;
+}
+
+/*! logo styles, okay? Pfft. */
+/* line 110, ../sass/style.scss */
+#logo {
+  max-width: 350px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 65px;
+}
+
+/*! 404 styles */
+/* line 118, ../sass/style.scss */
+#bg404 {
+  /*! likely what will be used for other sections, too. */
+  background-color: #ff4646;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 126, ../sass/style.scss */
+footer {
+  border-top: 1px solid #ffffff;
+  display: table;
+  width: 100%;
+  min-height: 200px;
+}
+
+/* line 133, ../sass/style.scss */
+footer > p {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Lekton", sans-serif;
+  color: #ffffff;
+}

@@ -1,0 +1,17 @@
+<h1 class="pageTitle text-center"><%= @blog.title %></h1>
+<div class="gimmeSpace">
+	<p>
+		Written On: <%= @blog.released_on.strftime( "%B %e %Y") if @blog.released_on %>
+	</p>
+	<p>
+		<%= @blog.content %>
+	</p>
+	<div class="col-xs-3 gimmeSpace">
+	<button class="btn btn-success"><a href="/blogs">&lArr; back to blog index</a></button>
+	<button class="btn btn-warning"><a href="/blogs/<%= @blog.id %>/edit">** edit this post</a></button>
+	<form action="/blogs/<%= @blog.id %>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input class="btn btn-danger" type="submit" value="!delete this post!">
+	</form>
+	</div>
+</div>

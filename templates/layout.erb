@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title><%= @title || "Collin's Ruby Blog" %></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Press+Start+2P|Lekton' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header>
+<%= erb :nav %>
+<img id="logo" class="img-responsive" src="/images/ruby_1.png" alt="Ruby Me, Please - Logo">
+</header>
+
+<section class="container">
+	<%= yield %>
+</section>
+
+<%= erb :footer %>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+</body>
+</html>
