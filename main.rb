@@ -1,5 +1,6 @@
 require 'sinatra'
 require './blog'
+require 'sinatra/flash'
 require 'sinatra/reloader' if development?
 
 set :public_folder, 'assets'

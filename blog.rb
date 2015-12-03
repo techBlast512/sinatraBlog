@@ -49,8 +49,8 @@ get '/blogs/:id' do
 end
 
 post '/blogs' do
-	create_blog
-	redirect to("/blogs/#{blog.id}")
+	flash[:notice] = "Blog was successfully added" if create_blog
+	redirect to("/blogs/#{@blog.id}")
 end
 
 get '/blogs/:id/edit' do
