@@ -1,6 +1,5 @@
 require 'sinatra'
 require './blog'
-require 'rack-google-analytics'
 require 'sinatra/reloader' if development?
 
 set :public_folder, 'assets'
