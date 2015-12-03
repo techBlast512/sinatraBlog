@@ -16,8 +16,24 @@ end
 
 DataMapper.finalize
 
+module BlogHelpers
+	def find_blogs
+		@blogs = Blog.all
+	end
+
+	def find_blog
+		Blog.get(params[:id])
+	end
+
+	def create_blog
+		@blog = Blog.create(params[:blog])
+	end
+end
+
+helpers BlogHelpers
+
 get '/blogs' do
-	@blogs = Blog.all
+	find_blogs
 	erb :blogs
 end
 
@@ -28,31 +44,31 @@ get '/blogs/new' do
 end
 
 get '/blogs/:id' do
-	@blog = Blog.get(params[:id])
+	@blog = find_blog
 	erb :show_blog
 end
 
 post '/blogs' do
-	blog = Blog.create(params[:blog])
+	create_blog
 	redirect to("/blogs/#{blog.id}")
 end
 
 get '/blogs/:id/edit' do
 	halt(401, 'Not Authorized') unless session[:admin]
-	@blog = Blog.get(params[:id])
+	@blog = find_blog
 	erb :edit_blog
 end
 
 put '/blogs/:id' do
 	halt(401, 'Not Authorized') unless session[:admin]
-	blog = Blog.get(params[:id])
+	blog = find_blog
 	blog.update(params[:blog])
 	redirect to("/blogs/#{blog.id}")
 end
 
 delete '/blogs/:id' do
 	halt(401, 'Not Authorized') unless session[:admin]
-	Blog.get(params[:id]).destroy
+	find_blog.destroy
 	redirect to('/blogs')
 end
 

@@ -1,5 +1,6 @@
 require 'sinatra'
 require './blog'
+require 'rack-google-analytics'
 require 'sinatra/reloader' if development?
 
 set :public_folder, 'assets'
@@ -16,6 +17,7 @@ end
 set :session_secret, 'itsGonnaBeHardToCrackThisOne'
 
 get '/login' do
+	@title = "Ruby Me, Please | Login"
 	erb :login
 end
 
@@ -34,7 +36,16 @@ configure do
 	set :password, 'gitItOnUp512'
 end
 
+def set_title
+	@title ||= "Collin's Ruby Blog" # uses Ruby conditional assignment operator ||=
+end
+
+before do
+	set_title
+end
+
 get '/logout' do
+	@title = "Logout"
 	session.clear
 	redirect to('/login')
 end
@@ -48,21 +59,22 @@ get '/get/hello' do
 end
 
 get '/' do
+	@title = "Ruby Me, Please | Home"
 	erb :home
 end
 
 get '/about' do
-	@title = "About This Website"
+	@title = "Ruby Me, Please | About"
 	erb :about
 end
 
 get '/contact' do
-	@title = "Contact Me"
+	@title = "Ruby Me, Please | Contact"
 	erb :contact
 end
 
 not_found do
-	@title = "It's a 404"
+	@title = "Page Not Found"
 	erb :not_found
 end
 
