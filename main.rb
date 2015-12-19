@@ -34,8 +34,8 @@ end
 
 configure do
 	enable :sessions
-	set :username, 'collinStubb512'
-	set :password, 'gitItOnUp512'
+	set :username, 'enterYourUsername'
+	set :password, 'enterYourPassword'
 end
 
 def send_message
