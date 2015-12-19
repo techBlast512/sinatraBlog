@@ -1,5 +1,7 @@
 require 'sinatra'
 require './blog'
+require 'pony'
+require 'compass'
 require 'sinatra/flash'
 require 'sinatra/reloader' if development?
 
@@ -34,6 +36,25 @@ configure do
 	enable :sessions
 	set :username, 'collinStubb512'
 	set :password, 'gitItOnUp512'
+end
+
+def send_message
+	Pony.mail(
+		:from => params[:name] + "<" + params[:email] + ">",
+		:to => 'daz@gmail.com',
+		:subject => params[:name] + " has contacted you",
+		:body => params[:message],
+		:port => '587',
+		:via => :smtp,
+		:via_options => {
+			:address => 'smtp.gmail.com',
+			:port => '587',
+			:enable_starttls_auto => true,
+			:user_name => 'daz',
+			:password => 'secret',
+			:authentication => :plain,
+			:domain => 'localhost.localdomain'
+	})
 end
 
 def set_title
@@ -71,6 +92,12 @@ end
 get '/contact' do
 	@title = "Ruby Me, Please | Contact"
 	erb :contact
+end
+
+post '/contact' do
+	send_message
+	flash[:notice] = "Thank you for your message. I'll get back to you soon!"
+	redirect to('/')
 end
 
 not_found do

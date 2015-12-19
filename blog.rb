@@ -30,8 +30,6 @@ module BlogHelpers
 	end
 end
 
-helpers BlogHelpers
-
 get '/blogs' do
 	find_blogs
 	erb :blogs
@@ -49,7 +47,7 @@ get '/blogs/:id' do
 end
 
 post '/blogs' do
-	flash[:notice] = "Blog was successfully added" if create_blog
+	flash[:notice] = "Blog Post successfully added" if create_blog
 	redirect to("/blogs/#{@blog.id}")
 end
 
